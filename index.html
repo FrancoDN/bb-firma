@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Firma Gmail - Billboard Argentina</title>
+
+    <!-- Import Material Icons (opcional para íconos) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Import Materialize CSS desde CDN -->
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Estilos personalizados -->
+    <style>
+      .logo-header {
+        height: 40px;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      /* Ajustes mínimos para la vista previa de la firma */
+      #firma-preview {
+        min-height: 150px;
+        word-wrap: break-word;
+      }
+      /* Simulación de Gmail */
+      .gmail-simulation {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+      .gmail-header {
+        padding: 16px;
+        border-bottom: 1px solid #ccc;
+      }
+      .gmail-body {
+        padding: 16px;
+      }
+      .gmail-signature {
+        margin-top: 16px;
+        border-top: 1px solid #ddd;
+        padding-top: 16px;
+      }
+      /* Ajuste para la barra superior blanca con logo */
+      nav.white {
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Barra de navegación (App Bar) con el logo -->
+    <nav class="white accent-4">
+      <div class="nav-wrapper container" style="display: flex; align-items: center; justify-content: center;">
+        <a href="#!" class="brand-logo">
+          <img 
+            src="https://www.dropbox.com/scl/fi/617pdpiegv45f6zgr0x8i/banner-billboard.png?rlkey=tgd3gyvpkgcgb18ad8z9qyn7g&st=pxpxlylq&dl=1" 
+            alt="Logo Billboard Argentina" 
+            class="logo-header"
+          />
+        </a>
+      </div>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container" style="margin-top: 40px;">
+      <div class="row">
+        <div class="col s12">
+          <h4 class="center-align">Generador de Firmas</h4>
+          <p class="center-align">
+            Completa los campos y haz clic en 
+            <strong>“Generar Vista Previa”</strong>. Si te gusta la firma, 
+            haz clic en <strong>“Copiar HTML”</strong> para abrir una nueva pestaña con la firma lista para copiar.
+          </p>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="nombre" type="text" />
+              <label for="nombre">Nombre</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="apellido" type="text" />
+              <label for="apellido">Apellido</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="puesto" type="text" />
+              <label for="puesto">Puesto</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="area" type="text" />
+              <label for="area">Área</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="direccion" type="text" />
+              <label for="direccion">Dirección de la oficina</label>
+            </div>
+          </div>
+        </form>
+
+        <!-- Botón para generar vista previa en la misma página -->
+        <div class="row center-align">
+          <button 
+            id="btn-generar" 
+            class="waves-effect waves-light btn purple accent-4"
+            style="margin-bottom: 20px;"
+          >
+            Generar Vista Previa
+          </button>
+        </div>
+      </div>
+
+      <!-- Vista previa de la firma tipo Gmail -->
+      <div class="row">
+        <div class="col s12">
+          <h5 class="center-align">Vista Previa de la Firma</h5>
+          <div id="firma-preview" class="card-panel grey lighten-4"></div>
+        </div>
+        <div class="col s12 center-align">
+          <button id="btn-copiar" class="waves-effect waves-light btn purple accent-4">
+            Copiar HTML
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer purple accent-4">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 center-align">
+            <p>&copy; 2025 Billboard Argentina</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Importar Materialize JS desde CDN -->
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
+    <!-- Archivo JS con la lógica de la firma -->
+    <script src="script.js"></script>
+  </body>
+</html>
